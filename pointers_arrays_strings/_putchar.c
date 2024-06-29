@@ -1,18 +1,12 @@
-#include <stdio.h>
-#include "main.h"
-/** main - Entry point
+#include <unistd.h>
+/**
+ * _putchar - Prints a character to stdout followed by a newline
+ * @c: The character to be printed
  *
- * Description: 'the program's description'
- **
- * Return: Always 0 (Success)
+ * Description: This function prints the character @c to the standard output
+ * (stdout), followed by a newline character '\n'.
  */
-int main(void)
+void _putchar(char c)
 {
-	char word[] = "_putchar";
-	int i;
-
-	for (i=0; i<=7; i++)
-	_putchar(word[i]);
-	_putchar('\n');
-	return (0);
+	write(1, &c, 1);
 }
