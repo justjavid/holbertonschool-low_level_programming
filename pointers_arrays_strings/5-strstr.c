@@ -2,10 +2,10 @@
 #include <stddef.h>
 
 /**
- *  *_strpbrk - returns piece of string after the character.
- *   *@s: pointer
- *    *@accept: pointer
- *     *Return: string after character
+ *  *_strstr - returns pointer that substring starts.
+ *   *@haystack: pointer
+ *    *@needle: pointer
+ *     *Return: pointer 
  */
 char *_strstr(char *haystack, char *needle)
 {
