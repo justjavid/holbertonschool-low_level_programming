@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- *  *_strchr - returns piece of string after the character.
- *   *@s: variable
- *    *@c: string
- *     *Return: string after given character
+ *  *_strspn - returns integer
+ *   *@s: pointer
+ *    *@accept: pointer
+ *     *Return: count characters initial segment
  */
 unsigned int _strspn(char *s, char *accept)
 {
@@ -16,7 +16,7 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		i = 0;
 		while (*(accept + i) != 0)
-		{	
+		{
 			if (*(s + count) == *(accept + i))
 			a++;
 			i++;
