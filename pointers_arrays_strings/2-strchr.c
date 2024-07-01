@@ -19,5 +19,7 @@ char *_strchr(char *s, char c)
 		}
 		count++;
 	}
+	if (c == '\0')
+	return (s + count);
 	return (NULL);
 }
