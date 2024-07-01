@@ -5,7 +5,7 @@
  *  *_strstr - returns pointer that substring starts.
  *   *@haystack: pointer
  *    *@needle: pointer
- *     *Return: pointer 
+ *     *Return: pointer
  */
 char *_strstr(char *haystack, char *needle)
 {
