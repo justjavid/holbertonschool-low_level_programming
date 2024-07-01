@@ -2,10 +2,10 @@
 #include <stddef.h>
 
 /**
- *  *_strchr - returns piece of string after the character.
- *   *@s: variable
- *    *@c: string
- *     *Return: string after given character
+ *  *_strpbrk - returns piece of string after the character.
+ *   *@s: pointer
+ *    *@accept: pointer
+ *     *Return: string after character
  */
 char *_strpbrk(char *s, char *accept)
 {
