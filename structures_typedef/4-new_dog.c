@@ -3,25 +3,15 @@
 #include <stdlib.h>
 
 /**
- *  new_dog - print variable's elements given format
- *  @name: name of dog
- *  @age: age of dog
- *  @owner: owner of dog
- *  Return: structure dog new_dog
+ * name_cpy - func
+ * @name: pointer
+ * Return: name copy
  */
-dog_t *new_dog(char *name, float age, char *owner)
+char *name_cpy(char *name)
 {
-	int i;
-	dog_t *dog;
 	char *n;
-	char *o;
+	int i;
 
-	dog = malloc(sizeof(dog_t));
-	if (dog == NULL)
-	{
-		free(dog);	
-		return (NULL);
-	}
 	i = 0;
 	while (name[i] != 0)
 	{
@@ -30,8 +20,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	n = malloc(i + 1);
 	if (n == NULL)
 	{
-		free(n);
-		free(dog);
+		return (NULL);
 	}
 	i = 0;
 	while (name[i] != 0)
@@ -40,27 +29,68 @@ dog_t *new_dog(char *name, float age, char *owner)
 		i++;
 	}
 	n[i] = '\0';
-	dog->name = n;
-	dog->age = age;
+	return (n);
+}
+
+/**
+ * owner_cpy - func
+ * @owner: pointer
+ * Return: owner copy
+ */
+char *owner_cpy(char *owner)
+{
+	char *o;
+	int i;
+
 	i = 0;
 	while (owner[i] != 0)
-        {
-                i++;
-        }
+	{
+		i++;
+	}
 	o = malloc(i + 1);
 	if (o == NULL)
-        {
-                free(o);
-		free(n);
-                free(dog);
-        }
-        i = 0;
-        while (owner[i] != 0)
-        {
-                o[i] = owner[i];
+	{
+		return (NULL);
+	}
+	i = 0;
+	while (owner[i] != 0)
+	{
+		o[i] = owner[i];
 		i++;
-        }
-        o[i] = '\0';
+	}
+	o[i] = '\0';
+	return (o);
+}
+/**
+ *  new_dog - print variable's elements given format
+ *  @name: name of dog
+ *  @age: age of dog
+ *  @owner: owner of dog
+ *  Return: structure dog new_dog
+ */
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	dog_t *dog;
+	char *n;
+	char *o;
+
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+	{
+		free(dog);
+		return (NULL);
+	}
+	n = name_cpy(name);
+	o = owner_cpy(owner);
+	if (n == NULL || o == NULL)
+	{
+		free(o);
+		free(n);
+		free(dog);
+		return (NULL);
+	}
+	dog->name = n;
+	dog->age = age;
 	dog->owner = o;
 	return (dog);
 }
