@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * get_op_func - function
+ * @s: pointer
+ * Return: func
+ */
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -15,7 +20,7 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while ((ops+i)->f != NULL && s[1] == '\0')
+	while ((ops + i)->f != NULL && s[1] == '\0')
 	{
 		if (*((ops + i)->op) == *s)
 			return ((ops + i)->f);
