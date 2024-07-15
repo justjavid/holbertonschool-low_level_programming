@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
+/**
  * op_add - function
  * @a: variable
  * @b: variable
@@ -13,7 +13,7 @@ int op_add(int a, int b)
 {
 	return (a + b);
 }
-/*
+/**
  * op_sub - function
  * @a: variable
  * @b: variable
@@ -23,7 +23,7 @@ int op_sub(int a, int b)
 {
 	return (a - b);
 }
-/*
+/**
  * op_mul - function
  * @a: variable
  * @b: variable
@@ -33,7 +33,7 @@ int op_mul(int a, int b)
 {
 	return (a * b);
 }
-/*
+/**
  * op_div - function
  * @a: variable
  * @b: variable
@@ -48,7 +48,7 @@ int op_div(int a, int b)
 	}
 	return (a / b);
 }
-/*
+/**
  * op_mod - function
  * @a: variable
  * @b: variable
