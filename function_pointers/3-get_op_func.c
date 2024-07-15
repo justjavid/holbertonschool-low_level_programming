@@ -17,11 +17,9 @@ int (*get_op_func(char *s))(int, int)
 	i = 0;
 	while ((ops+i)->f != NULL && s[1] == '\0')
 	{
+		if (*((ops + i)->op) == *s)
+			return ((ops + i)->f);
 		i++;
 	}
-	if (i == 5)
-	{
-		return (NULL);
-	}
-	return ((ops + i)->f);
+	return (NULL);
 }
