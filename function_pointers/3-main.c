@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc > 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
