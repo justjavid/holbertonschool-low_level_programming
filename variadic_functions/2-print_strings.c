@@ -21,7 +21,17 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		temp = va_arg(array, char *);
 		if (separator == NULL || i == n - 1)
 		{
+			if (temp == NULL)
+			{
+				printf("(nil)");
+				continue;
+			}
 			printf("%s", temp);
+			continue;
+		}
+		if (temp == NULL)
+		{
+			printf("(nil)");
 			continue;
 		}
 		printf("%s%s", temp, separator);
