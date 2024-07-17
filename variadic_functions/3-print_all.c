@@ -7,7 +7,7 @@
  * @s: variable
  * Return: length of string
  */
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int count;
 
@@ -27,7 +27,7 @@ int _strlen(char *s)
 void print_all(const char * const format, ...)
 {
 	va_list arr;
-	unsigned long int i = 0;
+	int i = 0;
 	char *str;
 
 	va_start(arr, format);
