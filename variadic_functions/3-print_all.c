@@ -1,7 +1,23 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
-#include <string.h>
+
+/**
+ * _strlen - return length of string
+ * @s: variable
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int count;
+
+	count = 0;
+	while (*(s + count) != 0)
+	{
+		count++;
+	}
+	return (count);
+}
 
 /**
  * print_all - prints anything that given.
@@ -41,7 +57,7 @@ void print_all(const char * const format, ...)
 				i++;
 				continue;
 		}
-		if (i != strlen(format) - 1)
+		if (i != _strlen(format) - 1)
 		{
 			printf(", ");
 			i++;
