@@ -65,10 +65,5 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-	while (format == NULL)
-	{
-		puts("");
-		break;
-	}
 	va_end(arr), printf("\n");
 }
