@@ -2,7 +2,7 @@
 
 /**
  * _abs - abs
- * @n: variable 
+ * @n: variable
  * Return: abs of given n number
  */
 int _abs(int n)
