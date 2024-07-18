@@ -6,10 +6,10 @@
  */
 void _2digit(int n)
 {
-	_putchar((n / 10) + '0');
-	_putchar((n % 10) + '0');
 	_putchar(',');
 	_putchar(' ');
+	_putchar((n / 10) + '0');
+	_putchar((n % 10) + '0');
 }
 
 /**
@@ -19,10 +19,10 @@ void _2digit(int n)
  */
 void _1digit(int n)
 {
-	_putchar(n + '0');
 	_putchar(',');
 	_putchar(' ');
 	_putchar(' ');
+	_putchar('0' + n);
 }
 
 /**
@@ -35,36 +35,26 @@ void times_table(void)
 	int i;
 	int j;
 
+	_putchar('0' + 0);
 	for (i = 1; i < 10; i++)
 	_1digit(0);
-	_putchar(0 + '0');
 	_putchar('\n');
 	for (i = 1; i < 10; i++)
 	{
+		_putchar('0' + 0);
 		n = 0;
 		j = 1;
-		while (j <= 10)
+		while (j <= 9)
 		{
-			if (j == 10 && (n / 10) > 0)
-			{
-				_putchar('0' + (n / 10));
-				_putchar('0' + (n % 10));
-				_putchar('\n');
-				j++;
-				continue;
-			}
-			else if (j == 10 && (n / 10) == 0)
-			{
-				_putchar('0' + n);
-				_putchar('\n');
-				j++;
-				continue;
-			}
+			n += i;
 			if (n < 10)
 			_1digit(n);
 			else
 			_2digit(n);
-			n += i;
+			if (j == 9)
+			{
+				_putchar('\n');
+			}
 			j++;
 		}
 	}
