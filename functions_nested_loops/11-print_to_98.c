@@ -7,7 +7,7 @@
  */
 void printnumber(int n)
 {
-	if (n < 0) 
+	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
@@ -19,19 +19,19 @@ void printnumber(int n)
 		return;
 	}
 
-	if (n/10)
-		printnumber(n/10);
+	if (n / 10)
+		printnumber(n / 10);
 
-	_putchar(n%10 + '0');
+	_putchar(n % 10 + '0');
 }
 /**
- *  printnumber - prinst integers from n to 98.
+ *  print_to_98 - prinst integers from n to 98.
  *  @n: given integer
  *  Return: nothing
  */
 void print_to_98(int n)
 {
-	while(n != 98)
+	while (n != 98)
 	{
 		printnumber(n);
 		_putchar(',');
