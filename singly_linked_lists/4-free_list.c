@@ -12,8 +12,6 @@ void free_list(list_t *head)
 
 	if (!head)
 		exit(1);
-	new = malloc(sizeof(list_t));
-	prev = malloc(sizeof(list_t));
 	new = head;
 	while (new)
 	{
