@@ -1,12 +1,12 @@
 #include "lists.h"
 
 /**
- *  get_dnodeint_at_index - return (index)th node of list
+ *  get_node - return (index)th node of list
  *  @head: pointer to head node of list
  *  @index: index of needed node
  *  Return: pointer to node
  */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+dlistint_t *get_node(dlistint_t *head, unsigned int index)
 {
 	unsigned int n = 0;
 	dlistint_t *h;
@@ -38,8 +38,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	new->n = n;
 	head = *h;
-	h1 = get_dnodeint_at_index(head, idx - 1);
-	h2 = get_dnodeint_at_index(head, idx);
+	h1 = get_node(head, idx - 1);
+	h2 = get_node(head, idx);
 	if (!h1 && !h2 && !i)
 		return (NULL);
 	if (idx == 0)
@@ -51,7 +51,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	new->prev = h1;
 	new->next = h2;
-	h1->next = new;
-	h2->prev = new;
+	(get_node(head, idx - 1))->next = new;
+	(get_node(head, idx))->prev = new;
 	return (new);
 }
