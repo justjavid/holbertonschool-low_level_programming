@@ -42,10 +42,9 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			return (1);
 		}
 		h = *head;
-		h = h->next;
-		h->prev = NULL;
-		free(*head);
-		*head = h;
+		*head = (*head)->next;
+		(*head)->prev = NULL;
+		free(h);
 		return (1);
 	}
 	if (get_node(*head, index))
