@@ -52,7 +52,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		del = get_node(*head, index);
 		(get_node(*head, index - 1))->next = (get_node(*head, index + 1));
-		(get_node(*head, index + 1))->prev = (get_node(*head, index - 1));
+		if(get_node(*head, index + 1))
+			(get_node(*head, index + 1))->prev = (get_node(*head, index - 1));
 		del->next = NULL;
 		del->prev = NULL;
 		free(del);
