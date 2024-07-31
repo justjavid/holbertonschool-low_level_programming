@@ -22,18 +22,17 @@ dlistint_t *get_node(dlistint_t *head, unsigned int index)
 	return (NULL);
 }
 /**
- *  insert_dnodeint_at_index - inserts a new node at a given position.
- *  @h: pointer to address of head node of list
- *  @idx: index of added node
- *  @n: data of node
- *  Return: pointer to node
+ *  delete_dnodeint_at_index - deletes the node at index of list.
+ *  @head: pointer to address of head node of list
+ *  @index: index of node needs deleting
+ *  Return: 1 if it succeeded, -1 if it failed
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *del, *prev_node, *next_node;
 
 	if (!(*head))
-                        return (-1);
+		return (-1);
 	if (index == 0)
 	{
 		if (!((*head)->next))
