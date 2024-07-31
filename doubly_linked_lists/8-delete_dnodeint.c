@@ -30,6 +30,8 @@ dlistint_t *get_node(dlistint_t *head, unsigned int index)
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
+	dlistint_t *h;
+
 	if (index == 0)
 	{
 		if (!(*head))
@@ -39,8 +41,10 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			*head = NULL;
 			return (1);
 		}
-		*head = (*head)->next;
-		(*head)->prev = NULL;
+		h = *head;
+		h = h->next;
+		h->prev = NULL;
+		*head = h;
 		return (1);
 	}
 	if (get_node(*head, index))
