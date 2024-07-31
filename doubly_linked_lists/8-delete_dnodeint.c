@@ -1,63 +1,61 @@
 #include "lists.h"
 
 /**
- *  get_node - return (index)th node of list
- *  @head: pointer to head node of list
- *  @index: index of needed node
- *  Return: pointer to node
+ * get_node - return (index)th node of list
+ * @head: pointer to head node of list
+ * @index: index of needed node
+ * Return: pointer to node
  */
 dlistint_t *get_node(dlistint_t *head, unsigned int index)
 {
-	unsigned int n = 0;
-	dlistint_t *h;
+    unsigned int n = 0;
+    dlistint_t *h = head;
 
-	h = head;
-	while (h)
-	{
-		if (n == index)
-			return (h);
-		h = h->next;
-		n++;
-	}
-	return (NULL);
+    while (h)
+    {
+        if (n == index)
+            return (h);
+        h = h->next;
+        n++;
+    }
+    return (NULL);
 }
+
 /**
- *  insert_dnodeint_at_index - inserts a new node at a given position.
- *  @h: pointer to address of head node of list
- *  @idx: index of added node
- *  @n: data of node
- *  Return: pointer to node
+ * delete_dnodeint_at_index - deletes a node at a given position.
+ * @head: pointer to address of head node of list
+ * @index: index of node to delete
+ * Return: 1 if successful, -1 if failed
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *h, *del;
+    dlistint_t *node_to_delete, *prev_node, *next_node;
 
-	if (index == 0)
-	{
-		if (!(*head))
-			return (-1);
-		if (!((*head)->next))
-		{
-			*head = NULL;
-			return (1);
-		}
-		h = *head;
-		h = h->next;
-		h->prev = NULL;
-		free(*head);
-		*head = h;
-		return (1);
-	}
-	if (get_node(*head, index))
-	{
-		del = get_node(*head, index);
-		(get_node(*head, index - 1))->next = (get_node(*head, index + 1));
-		if (get_node(*head, index + 1))
-			(get_node(*head, index + 1))->prev = (get_node(*head, index - 1));
-		del->next = NULL;
-		del->prev = NULL;
-		free(del);
-		return (1);
-	}
-	return (-1);
+    if (!head || !(*head))
+        return (-1);
+
+    node_to_delete = get_node(*head, index);
+
+    if (!node_to_delete)
+        return (-1);
+
+    if (index == 0)
+    {
+        *head = node_to_delete->next;
+        if (*head)
+            (*head)->prev = NULL;
+    }
+    else
+    {
+        prev_node = get_node(*head, index - 1);
+        next_node = get_node(*head, index + 1);
+
+        if (prev_node)
+            prev_node->next = next_node;
+        if (next_node)
+            next_node->prev = prev_node;
+    }
+
+    free(node_to_delete);
+    return (1);
 }
