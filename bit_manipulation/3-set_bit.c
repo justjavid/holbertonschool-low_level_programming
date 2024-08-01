@@ -2,7 +2,7 @@
 #include "2-get_bit.c"
 
 /**
- *  *_pow_recursion - returns x pow y with recursion.
+ *  *_pow - returns x pow y with recursion.
  *  *@x: given number
  *  *@y: pow number
  *  *Return: power of given numbe
