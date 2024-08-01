@@ -27,7 +27,7 @@ void print_binary(unsigned long int n)
 			_putchar('1');
 			n = n - prod;
 		}
-		else 
+		else
 			_putchar('0');
 		prod = prod >> 1;
 	}
