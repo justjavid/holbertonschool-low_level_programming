@@ -14,7 +14,7 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-	while (n >= prod * 2)
+	while (n >= prod * 2 && prod * 2 <= ULONG_MAX)
 		prod *= 2;
 	while (prod)
 	{
