@@ -8,17 +8,14 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int prod = 1;
-	unsigned long int max = ULONG_MAX;
 
 	if (n == 0)
 	{
 		_putchar('0');
 		return;
 	}
-	while (n >= prod)
-		if (n <= (max >> 2))
-			prod *= 2;
-	prod = prod >> 1;
+	while (n >= prod * 2)
+		prod *= 2;
 	while (prod)
 	{
 		if (n >= prod)
