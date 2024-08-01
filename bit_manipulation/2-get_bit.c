@@ -13,8 +13,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	while (n)
 	{
 		if (i == index)
-			return (n % 2);
-		n = n / 2;
+			return (n & 1);
+		n = n >> 1;
 		i++;
 	}
 	while (i < 64)
