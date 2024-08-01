@@ -8,6 +8,7 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int prod = 1;
+	unsigned long int max = ULONG_MAX;
 
 	if (n == 0)
 	{
@@ -15,7 +16,8 @@ void print_binary(unsigned long int n)
 		return;
 	}
 	while (n >= prod)
-		prod *= 2;
+		if (n <= (max >> 2))
+			prod *= 2;
 	prod = prod >> 1;
 	while (prod)
 	{
