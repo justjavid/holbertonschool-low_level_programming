@@ -14,7 +14,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	BRead = read(fd, buffer, letters);
 	if (BRead == -1)
 		return (0);
-	BWrite = write(1, buffer, (long unsigned int) BRead);
+	BWrite = write(STDOUT_FILENO, buffer, (long unsigned int) BRead);
 	if (BWrite == -1)
 		return (0);
 	close(fd);
