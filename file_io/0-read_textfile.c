@@ -3,7 +3,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	char buffer[1024];
+	char buffer[2100];
 	ssize_t BRead, BWrite;
 
 	if (!filename)
